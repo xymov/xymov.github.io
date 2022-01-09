@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>nohacks</title>
+  <title>nohacks的个人博客</title>
   
-  <subtitle> 共享|自由</subtitle>
+  <subtitle> 星源网络官方博客</subtitle>
   <link href="http://blog.nohacks.cn/atom.xml" rel="self"/>
   
   <link href="http://blog.nohacks.cn/"/>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>xymov智能解析</title>
-    <link href="http://blog.nohacks.cn/2022-01-08-xymov.html"/>
-    <id>http://blog.nohacks.cn/2022-01-08-xymov.html</id>
+    <link href="http://blog.nohacks.cn/2022/01/08/xymov.html"/>
+    <id>http://blog.nohacks.cn/2022/01/08/xymov.html</id>
     <published>2022-01-08T00:45:15.000Z</published>
     <updated>2022-01-08T06:41:14.645Z</updated>
     
