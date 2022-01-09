@@ -5,12 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="xymov智能解析, nohacks,xymov,xyplayer">
-    <meta name="description" content="
+    <meta name="description" content="概述
   xymov视频解析采用缓存技术，能快速响应用户数据请求，体验超清视频急速播放效果，支持80+个视频站点解析内置超强的防火墙、广告过滤功能，保证你每一分钱都不会浪费。轻松实现PC、WAP、APP三端完美对接。
 
-[TOC]
-[TOC]
-">
+
+功能
+云解析：能够">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -267,10 +267,104 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 137px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -304,7 +398,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    333
+                    324
                 </div>
                 
 
@@ -331,26 +425,32 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
+                <h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><blockquote>
 <p>  xymov视频解析采用缓存技术，能快速响应用户数据请求，体验超清视频急速播放效果，支持80+个视频站点解析内置超强的防火墙、广告过滤功能，保证你每一分钱都不会浪费。轻松实现PC、WAP、APP三端完美对接。</p>
 </blockquote>
-<p>[TOC]</p>
-<p>[TOC]</p>
-<p>123</p>
-<p>[TOC]</p>
 <p><a target="_blank" rel="noopener" href="http://www.xymov.net/"><img src="https://www.nohacks.cn/content/uploadfile/202201/4b1c1641090216.jpg"></a></p>
-<p>简介：</p>
-<p>1.云解析：能够主动调用第三方资源站资源播映。</p>
-<p>2.API 解析：能够设置调用 苹果 cms/海洋 cms 数据库资源</p>
-<p>3.在线查找：用户能够直接在线查找资源播映。</p>
-<p>4.广告屏蔽：内置广告屏蔽代码，并配有具体使用说明，轻松屏蔽一次解析广告。</p>
-<p>5.授权防盗用功用：可设置域名、ip 授权，做自己的商业解析!</p>
-<p>6.在线直播：聚合全网优质在线直播，急速播映，高清画质!能够无限增加!</p>
-<p>7.盗用跳转：发现有人盗用你的解析时，主动跳转 你设置的网址</p>
-<p>8.缓存功用：之前解析过的视频可进行急速播映无推迟!(可封闭)</p>
-<p>9.二次解析线路无限增加!</p>
+<h4 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h4><ul>
+<li><p>云解析：能够主动调用第三方资源站资源播映。</p>
+</li>
+<li><p>API 解析：能够设置调用 苹果 cms/海洋 cms 数据库资源</p>
+</li>
+<li><p>在线查找：用户能够直接在线查找资源播映。</p>
+</li>
+<li><p>广告屏蔽：内置广告屏蔽代码，并配有具体使用说明，轻松屏蔽一次解析广告。</p>
+</li>
+<li><p>授权防盗用功用：可设置域名、ip 授权，做自己的商业解析!</p>
+</li>
+<li><p>在线直播：聚合全网优质在线直播，急速播映，高清画质!能够无限增加!</p>
+</li>
+<li><p>盗用跳转：发现有人盗用你的解析时，主动跳转 你设置的网址</p>
+</li>
+<li><p>缓存功用：之前解析过的视频可进行急速播映无推迟!(可封闭)</p>
+</li>
+<li><p>二次解析线路无限增加!</p>
+</li>
+</ul>
 <p>10.智能解析：能够装备智能解析，能够针对不同来历站主动调用解析!</p>
-<p>官方网站：<a target="_blank" rel="noopener" href="http://www.xymov.net/">http://www.xymov.net</a></p>
+<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p>官方网站：<a target="_blank" rel="noopener" href="http://www.xymov.net/">http://www.xymov.net</a></p>
 
                 
             </div>
@@ -972,6 +1072,100 @@
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src=""></script>
+<script>
+    $.getScript("/libs/tocbot/tocbot.min.js",function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    })
+</script>
+
     
 
 </main>
@@ -995,7 +1189,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">333</span>
+                        class="white-color">324</span>
             
             
             
