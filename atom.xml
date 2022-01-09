@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>nohacks的个人博客</title>
+  <title>nohacks</title>
   
-  <subtitle> 星源网络官方博客</subtitle>
+  <subtitle> 共享|自由</subtitle>
   <link href="http://blog.nohacks.cn/atom.xml" rel="self"/>
   
   <link href="http://blog.nohacks.cn/"/>
