@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>网站改版</title>
+      <link href="/2022/01/10/2022-nian-de-wang-zhan-gai-ban.html"/>
+      <url>/2022/01/10/2022-nian-de-wang-zhan-gai-ban.html</url>
+      
+        <content type="html"><![CDATA[<p>经过几天的折腾，从最开始的blog，到emlog,再到现在用的hexo,感觉还是这个更美观一点，而且是全静态的，文章源码可控，可托管在github上，可靠性也比较高，所以决定以后用这个吧。</p><p>以前的文章会慢慢恢复的，over</p><pre class="line-numbers language-c" data-language="c"><code class="language-c">hexo cl <span class="token operator">&amp;</span>hexo g <span class="token operator">&amp;</span> hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网站改版 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网吧影视特权</title>
+      <link href="/2022/01/10/netbar-vip-video.html"/>
+      <url>/2022/01/10/netbar-vip-video.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>完全免费的网吧影视特权软件，分为服务端和客户端，支持腾讯，优酷，爱奇艺等八家主流视频网站的免VIP视频播放，由nohacks.cn原创，转载请注明出处！</p></blockquote><p><a href="https://www.nohacks.cn/content/uploadfile/202201/66ce1641427598.jpg"><img src="https://www.nohacks.cn/content/uploadfile/202201/thum-66ce1641427598.jpg"></a></p><p>简介：<br>   早期采用<code>易语言</code>编写的一款免VIP看视频软件，分为服务端和客户端，特别适合<code>网吧</code>使用,最重要的是它完全<code>免费</code>！</p><p>   云端实时更新，支持剧集连播，海量VIP影片等你来看！</p><p>官方地址：<a href="http://user.nohacks.cn/home/article/index/id/1.html" title="点击前往">点击前往</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 作品 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网吧影视特权 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>联想thinkpad-x1c4 黑苹果经验分享</title>
       <link href="/2022/01/10/thinkpad-x1c4-hackintosh.html"/>
       <url>/2022/01/10/thinkpad-x1c4-hackintosh.html</url>
@@ -22,7 +72,7 @@
             
             <tag> 黑苹果 </tag>
             
-            <tag> thinkpad x1 - Hackintosh </tag>
+            <tag> Hackintosh </tag>
             
         </tags>
       
