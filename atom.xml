@@ -44,32 +44,6 @@
   </entry>
   
   <entry>
-    <title>网站改版</title>
-    <link href="http://www.nohacks.cn/2022/01/10/2022-nian-de-wang-zhan-gai-ban.html"/>
-    <id>http://www.nohacks.cn/2022/01/10/2022-nian-de-wang-zhan-gai-ban.html</id>
-    <published>2022-01-10T02:18:33.000Z</published>
-    <updated>2022-01-10T02:36:18.236Z</updated>
-    
-    <content type="html"><![CDATA[<p>经过几天的折腾，从最开始的blog，到emlog,再到现在用的hexo,感觉还是这个更美观一点，而且是全静态的，文章源码可控，可托管在github上，可靠性也比较高，所以决定以后用这个吧。</p><p>以前的文章会慢慢恢复的,over</p><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">hexo</span><span class="token expression">的编译发布</span></span>hexo cl <span class="token operator">&amp;&amp;</span> hexo g <span class="token operator">&amp;&amp;</span> hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;经过几天的折腾，从最开始的blog，到emlog,再到现在用的hexo,感觉还是这个更美观一点，而且是全静态的，文章源码可控，可托管在github上，可靠性也比较高，所以决定以后用这个吧。&lt;/p&gt;
-&lt;p&gt;以前的文章会慢慢恢复的,over&lt;/p&gt;
-&lt;pre class=&quot;li</summary>
-      
-    
-    
-    
-    <category term="随笔" scheme="http://www.nohacks.cn/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-    <category term="网站改版" scheme="http://www.nohacks.cn/tags/%E7%BD%91%E7%AB%99%E6%94%B9%E7%89%88/"/>
-    
-  </entry>
-  
-  <entry>
     <title>网吧影视特权</title>
     <link href="http://www.nohacks.cn/2022/01/10/netbar-vip-video.html"/>
     <id>http://www.nohacks.cn/2022/01/10/netbar-vip-video.html</id>
@@ -128,9 +102,9 @@
     <link href="http://www.nohacks.cn/2022/01/10/vst-video.html"/>
     <id>http://www.nohacks.cn/2022/01/10/vst-video.html</id>
     <published>2022-01-10T00:45:15.000Z</published>
-    <updated>2022-01-10T03:24:44.310Z</updated>
+    <updated>2022-01-16T01:25:36.280Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><blockquote><p>vst-video是开源的跨平台资源视频播放器，支持浏览播放自定义资源站视频，堪比快播，由nohacks.cn原创，转载请注明出处！</p></blockquote><p><a href="https://imgtu.com/i/7AO2ng"><img src="https://s4.ax1x.com/2022/01/10/7AO2ng.png"></a></p><p><a href="https://imgtu.com/i/7AOBtI"><img src="https://s4.ax1x.com/2022/01/10/7AOBtI.png"></a></p><p><a href="https://imgtu.com/i/7AOtXD"><img src="https://s4.ax1x.com/2022/01/10/7AOtXD.png"></a></p><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>基于 Qt 的 QMultiMedia组件构建，目标是搭建deepin v20云播放平台。</p><p>主要有以下特色或功能：</p><ul><li>简介高效,快速浏览视频简介，不用频繁在简介和浏览下切换，特别适合现代高分辨率机器。</li><li>自定义资源站，拥有无限视频资源库(百度搜索资源站，使用支持海洋CMS的资源接口)。</li><li>支持主题切换，可选系统，浅色及深色，默认系统。</li><li>兼容古董电脑，可切换渲染模式,可选视频和绘制，现代电脑可选绘制模式以消除绿边，支持更多功能。</li><li>支持本地和远程视频播放，可设置为默认播放器作为本地播放器使用。</li><li>支持播放记录，可快速播放上次播放视频。</li></ul><h3 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h3><p>V2.55主要更新<br>添加视频渲染选项，可选视频（默认）和绘制(视频有绿边选择此模式可消除);<br>资源设置添加分类过滤功能；<br>视频播放器右键添加刷新功能;<br>修复自选主题缩放BUG;<br>其它细节优化;</p><h3 id="Windows版本下载"><a href="#Windows版本下载" class="headerlink" title="Windows版本下载"></a>Windows版本下载</h3><p>先安装<a href="https://github.com/Nevcairiel/LAVFilters/releases/download/0.75.1/LAVFilters-0.75.1-Installer.exe" title="解码器">解码器</a>，在下载<a href="https://github.com/xymov/vst-video/releases/download/V2.55/vst-video-win32.zip" title="vst-video-win32.zip">vst-video-win32.zip</a>解压，运行vst-video.exe即可<br>另外默认资源站已经失效，需要更新资源，右上角-菜单-设置-资源设置 ,复制下面的内容进行替换即可。</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">天空云,https://api.tiankongapi.com/api.php/provide/vod/at/xml/from/tkm3u8/百度云,https://m3u8.apibdzy.com/api.php/provide/vod/at/xml/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="更多版本下载"><a href="#更多版本下载" class="headerlink" title="更多版本下载"></a><a href="https://github.com/xymov/vst-video/releases/tag/V2.55" title="点击前往">更多版本下载</a></h3>]]></content>
+    <content type="html"><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><blockquote><p>vst-video是开源的跨平台资源视频播放器，支持浏览播放自定义资源站视频，堪比快播，由nohacks.cn原创，转载请注明出处！</p></blockquote><p><a href="https://imgtu.com/i/7AO2ng"><img src="https://s4.ax1x.com/2022/01/10/7AO2ng.png"></a></p><p><a href="https://imgtu.com/i/7AOBtI"><img src="https://s4.ax1x.com/2022/01/10/7AOBtI.png"></a></p><p><a href="https://imgtu.com/i/7AOtXD"><img src="https://s4.ax1x.com/2022/01/10/7AOtXD.png"></a></p><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>基于 Qt 的 QMultiMedia组件构建，目标是搭建deepin v20云播放平台。</p><p>主要有以下特色或功能：</p><ul><li>简介高效,快速浏览视频简介，不用频繁在简介和浏览下切换，特别适合现代高分辨率机器。</li><li>自定义资源站，拥有无限视频资源库(百度搜索资源站，使用支持海洋CMS的资源接口)。</li><li>支持主题切换，可选系统，浅色及深色，默认系统。</li><li>兼容古董电脑，可切换渲染模式,可选视频和绘制，现代电脑可选绘制模式以消除绿边，支持更多功能。</li><li>支持本地和远程视频播放，可设置为默认播放器作为本地播放器使用。</li><li>支持播放记录，可快速播放上次播放视频。</li></ul><h3 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h3><p>V2.55主要更新<br>添加视频渲染选项，可选视频（默认）和绘制(视频有绿边选择此模式可消除);<br>资源设置添加分类过滤功能；<br>视频播放器右键添加刷新功能;<br>修复自选主题缩放BUG;<br>其它细节优化;</p><h3 id="Windows版本下载"><a href="#Windows版本下载" class="headerlink" title="Windows版本下载"></a>Windows版本下载</h3><p>先安装<a href="https://github.com/Nevcairiel/LAVFilters/releases/download/0.75.1/LAVFilters-0.75.1-Installer.exe" title="解码器">解码器</a>，在下载<a href="https://github.com/xymov/vst-video/releases/download/V2.55/vst-video-win32.zip" title="vst-video-win32.zip">vst-video-win32.zip</a>解压，运行vst-video.exe即可<br>另外默认资源站已经失效，需要更新资源，右上角-菜单-设置-资源设置 ,复制下面的内容进行替换即可。</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">天空云,https://api.tiankongapi.com/api.php/provide/vod/at/xml/from/tkm3u8/百度云,https://m3u8.apibdzy.com/api.php/provide/vod/at/xml/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="更多版本下载"><a href="#更多版本下载" class="headerlink" title="更多版本下载"></a><a href="https://github.com/xymov/vst-video/releases/tag/V2.55" title="点击前往">更多版本下载</a></h3><p>   <a href="https://pan.baidu.com/s/1LoGH45z-Y9PnrtXuSPeaIg" title="提取码:h8sb ">网盘下载(提取码:h8sb)</a> </p>]]></content>
     
     
       
@@ -176,6 +150,61 @@
     <category term="xyplayer" scheme="http://www.nohacks.cn/tags/xyplayer/"/>
     
     <category term="解析" scheme="http://www.nohacks.cn/tags/%E8%A7%A3%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Easy SysLite V1.2 （Windows减肥专家）</title>
+    <link href="http://www.nohacks.cn/2016/04/19/easy-syslite.html"/>
+    <id>http://www.nohacks.cn/2016/04/19/easy-syslite.html</id>
+    <published>2016-04-19T00:45:15.000Z</published>
+    <updated>2022-01-16T02:20:02.382Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>   Easy SysLite （Windows减肥专家）是一款开源的适合装机工作者的系统减肥工具，即适合新手也适合经验丰富的玩家，向导模式，一键搞定。</p><h3 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h3><p>2016.4.21更新  V1.2 版<br>      Bugfix:  提示修复，修复完成提示有误导的BUG； </p><p>2016.4.20更新  V1.2 版</p><p>   Bugfix:  大幅优化程序执行速度，修复程序有时崩溃的bug;</p><p>   update: 可单独设置是否递归搜索,优化win7配置文件。</p><p>   upedit: 界面细微调整;</p><h3 id="程序界面"><a href="#程序界面" class="headerlink" title="程序界面"></a>程序界面</h3><p> 如下图：</p><p><a href="https://imgtu.com/i/7Yx85F"><img src="https://s4.ax1x.com/2022/01/16/7Yx85F.png"></a><br><a href="https://imgtu.com/i/7YxY8J"><img src="https://s4.ax1x.com/2022/01/16/7YxY8J.png"></a><br><a href="https://imgtu.com/i/7Yx3UU"><img src="https://s4.ax1x.com/2022/01/16/7Yx3UU.png"></a><br><a href="https://imgtu.com/i/7YxJC4"><img src="https://s4.ax1x.com/2022/01/16/7YxJC4.png"></a><br><a href="https://imgtu.com/i/7Yx1ET"><img src="https://s4.ax1x.com/2022/01/16/7Yx1ET.png"></a></p><h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>   建议在PE环境下执行，在生成镜像前，选择对应配置文件执行即可。</p><h3 id="自定义配置"><a href="#自定义配置" class="headerlink" title="自定义配置"></a>自定义配置</h3><p>   程序是通过加载配置文件来实现减肥操作的，有经验的用户可以参考程序自带的方案用来支援其他版本的Windows 系统。</p><p>   配置文件结构是这样的：</p><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="gb2312"?&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nlite</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>del</span> <span class="token attr-name">display</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>补丁备份清零（BACKUP零字节）<span class="token punctuation">"</span></span>  <span class="token attr-name">check</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>1</span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@C:\Windows\winsxs\Backup\*<span class="token punctuation">"</span></span>  <span class="token attr-name">save</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>*<span class="token punctuation">"</span></span> <span class="token attr-name">cls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>*.*<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>del</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>del</span> <span class="token attr-name">display</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>多媒体游戏（建议用“打开或关闭Windows功能”删除）<span class="token punctuation">"</span></span>  <span class="token attr-name">check</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>1</span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>C:\Program Files\Microsoft Games\Chess,Mahjong,Purble Place<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>del</span><span class="token punctuation">&gt;</span></span>;添加更多。。。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nlite</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h6 id="属性列表"><a href="#属性列表" class="headerlink" title="属性列表"></a>属性列表</h6><p> 从配置文件可以看到，主要是删除文件操作，在nlite节点里添加子节点del即可，del节点支持属性如下：</p><table><thead><tr><th>属性</th><th>必须</th><th>注释</th></tr></thead><tbody><tr><td>display</td><td>是</td><td>显示名称</td></tr><tr><td>check</td><td>否</td><td>是否选中</td></tr><tr><td>path</td><td>是</td><td>要删除的目录或文件组，每组支持同级目录多个文件或目录以”,”分割,多组以”;“分割,支持通配符,路径前面加”@”表示递归搜索,包含子目录。</td></tr><tr><td>save</td><td>否</td><td>要排除的文件或目录 ，多个文件或目录之间用”,”隔开，支持通配符。</td></tr><tr><td>cls</td><td>否</td><td>要清空内容的文件名称，多个文件之间用”,”隔开，支持通配符。</td></tr></tbody></table><h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>  网盘下载：<a href="https://pan.baidu.com/s/1slnC2tR">https://pan.baidu.com/s/1slnC2tR</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h4&gt;&lt;p&gt;   Easy SysLite （Windows减肥专家）是一款开源的适合装机工作者的系统减肥工具，即适合新手也适合经验丰富的玩家，向导模式</summary>
+      
+    
+    
+    
+    <category term="作品" scheme="http://www.nohacks.cn/categories/%E4%BD%9C%E5%93%81/"/>
+    
+    
+    <category term="Easy SysLite" scheme="http://www.nohacks.cn/tags/Easy-SysLite/"/>
+    
+    <category term="Windows减肥专家" scheme="http://www.nohacks.cn/tags/Windows%E5%87%8F%E8%82%A5%E4%B8%93%E5%AE%B6/"/>
+    
+    <category term="系统减肥" scheme="http://www.nohacks.cn/tags/%E7%B3%BB%E7%BB%9F%E5%87%8F%E8%82%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Win7封装步骤</title>
+    <link href="http://www.nohacks.cn/2016/04/19/win7-feng-zhuang-bu-zou.html"/>
+    <id>http://www.nohacks.cn/2016/04/19/win7-feng-zhuang-bu-zou.html</id>
+    <published>2016-04-19T00:45:15.000Z</published>
+    <updated>2022-01-16T02:25:42.244Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><blockquote><p>本文主要介绍win7的减肥步骤以及Windows减肥专家的使用方法，由nohacks.cn原创，转载请注明出处！</p></blockquote><h3 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h3><p>虚拟机：  <a href="http://pan.baidu.com/s/1hs6QoYC">http://pan.baidu.com/s/1hs6QoYC</a><br>原版系统：<a href="ed2k://|file|cn_windows_7_ultimate_with_sp1_x64_dvd_u_677408.iso|3420557312|B58548681854236C7939003B583A8078|/">cn_windows_7_ultimate_with_sp1_x64_dvd_u_677408.ISO</a><br>PE: <a href="http://pan.baidu.com/s/1dEzhnmp">http://pan.baidu.com/s/1dEzhnmp</a></p><h3 id="减肥步骤"><a href="#减肥步骤" class="headerlink" title="减肥步骤"></a>减肥步骤</h3><p>1.安装原版，在输入用户名的地方按“CTRL+SHIFT+F3 ”进入官方部署环境（重启快照为“系统初始”）</p><p>2.恢复桌面图标，右键-个性化-更改桌面图标- 全部选中（控制面板除外）</p><p>3.操作中心取消所有通知，  操作中心-更改操作中心设置- 打勾项全部取消</p><p>   Win键+R键打开运行窗口，输入gpedit.msc来打开本地组策略编辑器,用户配置——管理模板——“开始”菜单和任务栏在里面找到 删除“操作中心”图标，选择启用.</p><p>4.关闭系统保护：计算机右键属性–高级系统设置–系统保护—配置——关闭系统保护（删除所有还原点）</p><p>5.转移虚拟内存：计算机右键属性–高级管理设置–高级–性能-设置-高级-更改。</p><p>6.关闭休眠 ：WIN+R  执行  powercfg -h off  重启电脑生效 （重启快照为“系统优化”）</p><p>  C盘此时占用应该在 ：7.3G 左右</p><p>7.（可选）转移用户资料到D盘 ： 打开用户文档- 选择要转移的文件夹-右键-属性-位置（收藏,文档,下载,图片,桌面）</p><p>8.安装王码五笔86 fox WIN7 X64位</p><p>9.安装维护小工具 （提取第三方GHOST制作自解压包）</p><p>10.安装IE11,安装清理补丁 kb2852386-x64   (IE11离线安装包：<a href="https://www.itiankong.net/forum.php?mod=viewthread&amp;tid=365272&amp;highlight=ie11">https://www.itiankong.net/forum.php?mod=viewthread&amp;tid=365272&amp;highlight=ie11</a>)</p><p>  （安装完后重启快照为“减肥前”，C盘此时占用应该在 ：7.3G 左右）</p><p>11.进PE模式，用Windows 减肥专家-选择win7配置- 执行   C盘占用： 5.91G</p><p>12.拷贝C盘文件（驱动,运行库,常用软件包 需控制在1.45G左右 ）  </p><p>13.用DISM++ 空间回收 全选  ，C盘此时占用应该在 ：7.18G 左右 （快照为“减肥后”）</p><p>14.ES4封装后（步骤略），最后 GHOST 最大压缩  体积为 3.99G</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;本文主要介绍win7的减肥步骤以及Windows减肥专家的使用方法，由nohacks.cn原创，转载请注明出处！&lt;</summary>
+      
+    
+    
+    
+    <category term="分享" scheme="http://www.nohacks.cn/categories/%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="Win7封装" scheme="http://www.nohacks.cn/tags/Win7%E5%B0%81%E8%A3%85/"/>
+    
+    <category term="系统封装" scheme="http://www.nohacks.cn/tags/%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/"/>
     
   </entry>
   
