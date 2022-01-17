@@ -1,0 +1,2187 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="ROS API 中文说明, nohacks,xymov,xyplayer">
+    <meta name="description" content="前言
+ROS 是 一个比较流行的软路由系统，它的强大在于它的高度定制性，它提供了应用程序编程使用的API接口，是它应用更加灵活，我们可以自己开发软件或WEB程序来操控ROS，比较实用的例子就是当用ROS管理小区网络时，我们用自己写的软件来管">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>ROS API 中文说明 | nohacks</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/dark.css">
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+<meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="nohacks" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.jpg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">nohacks</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/categories/%E4%BD%9C%E5%93%81">
+          
+          <i class="fas fa-code" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>作品</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/%E9%9A%8F%E7%AC%94">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>随笔</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/%E5%88%86%E4%BA%AB">
+          
+          <i class="fas fa-share" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分享</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories/%E6%95%99%E7%A8%8B">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>其他</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">nohacks</div>
+        <div class="logo-desc">
+            
+            nohacks的个人博客是星源网络的官方博客。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/categories/%E4%BD%9C%E5%93%81 " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-code" style="position: absolute;left:50px" ></i>
+			      
+		          <span>作品</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories/%E9%9A%8F%E7%AC%94 " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>随笔</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories/%E5%88%86%E4%BA%AB " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-share" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分享</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories/%E6%95%99%E7%A8%8B " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>其他</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+<main id="main_wrap">
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s4.ax1x.com/2022/01/17/7UROT1.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">ROS API 中文说明</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 137px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ROS-API/">
+                                <span class="chip bg-color">ROS API</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%88%86%E4%BA%AB/" class="post-category">
+                                分享
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2016-03-08
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    22 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>ROS 是 一个比较流行的软路由系统，它的强大在于它的高度定制性，它提供了应用程序编程使用的API接口，是它应用更加灵活，我们可以自己开发软件或WEB程序来操控ROS，比较实用的例子就是当用ROS管理小区网络时，我们用自己写的软件来管理上网账号，安全又方便，总之好处多多，本文基于官方API文档： HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/API&quot;">http://wiki.mikrotik.com/wiki/API"</a> <a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/API">http://wiki.mikrotik.com/wiki/API</a> 翻译而成，结合了作者的理解，水平有限，难免有错漏的地方，望大家批评指正，由nohacks.cn原创，转载请注明出处！</p>
+</blockquote>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>1 简介<br>2 通讯协议<br>2.1 API语句<br>2.1.1 命令词<br>2.1.2 属性词<br>2.1.3 API 属性词<br>2.1.4 查询语句<br>2.1.5 回复语句<br>2.2 API 特定命令说明<br>3 初始登录<br>4 标签(.Tags )<br>5 API命令说明<br>5.1 查询词说明<br>5.2 OID<br>6 API 命令例子<br>6.1 /system/package/getall<br>6.2 /user/active/listen<br>6.3 /cancel, simultaneous commands<br>7 客户端程序例子<br>8 参考<br>8.1 API examples in the Wiki<br>8.2 API examples on the MikroTik Forum<br>8.3 API exmaples elsewhere </p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>   应用程序编程接口（API），允许用户创建定制的软件解决方案与RouterOS的沟通，收集信息，调整配置和管理路由器。 API紧随命令行界面（CLI）的语法。它可以用来创建转换或自定义的配置工具，以帮助管理使用RouterOS的路由器。使用API需要RouterOS版本3.x或更高的版本。默认情况下，API使用端口8728，默认服务是禁用的。通讯服务的名称是API，请在IP-SERVER里开启，服务管理的详细信息，请参阅相应的手册部分。</p>
+<h2 id="2-通讯协议："><a href="#2-通讯协议：" class="headerlink" title="2.通讯协议："></a>2.通讯协议：</h2><p>   应用程序与路由器的通信是通过发送和接收路由器的一个或多个编码的句子来完成的。一个句子是以零字符结尾的单词序列。词是句子以某种方式编码 -（编码长度是数据的一部分），路由器发送和接收回复并发送这些句子。每个句子发送到路由器使用API没有特定的顺序，每个命令字是以零字符标记结束的。当路由器接收到完整的句子（命令字，或多个属性的话，零字符结束），它就开始执行命令，并将结果返回给应用程序。</p>
+<h3 id="2-1-API语句"><a href="#2-1-API语句" class="headerlink" title="2.1 API语句"></a>2.1 API语句</h3><p>   词是句子的一部分。每个词长都用某种方式编码 - 词长编码跟随词的内容就是一个句子。词的长度应为将要发送的字节计数（不包括词长编码）。<br>词长编码如下：</p>
+<table>
+<thead>
+<tr>
+<th>Value of length</th>
+<th>#of bytes</th>
+<th>Encoding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0 &lt;= Len &lt;= 0x7F</td>
+<td>1</td>
+<td>Len, lowest byte  词长度</td>
+</tr>
+<tr>
+<td>0x80 &lt;= Len &lt;= 0x3FFF</td>
+<td>2</td>
+<td>Len | 0x8000, two lower bytes</td>
+</tr>
+<tr>
+<td>0x4000 &lt;= Len &lt;= 0x1FFFFF</td>
+<td>3</td>
+<td>Len | 0xC00000, three lower bytes</td>
+</tr>
+<tr>
+<td>0x200000&lt;=Len &lt;= 0xFFFFFFF</td>
+<td>4</td>
+<td>Len | 0xE0000000</td>
+</tr>
+<tr>
+<td>Len &gt;= 0x10000000</td>
+<td>5</td>
+<td>0xF0 and Len as four bytes</td>
+</tr>
+</tbody></table>
+<p>对应的10进制：</p>
+<table>
+<thead>
+<tr>
+<th>长度</th>
+<th>字节数</th>
+<th>词长编码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0 &lt;= 长度&lt;=127</td>
+<td>1</td>
+<td>长度低位</td>
+</tr>
+<tr>
+<td>128 &lt;= 长度&lt;= 16383</td>
+<td>2</td>
+<td>位或（长度 ，32768）取低2位</td>
+</tr>
+<tr>
+<td>16384&lt;= 长度&lt;= 2097151</td>
+<td>3</td>
+<td>位或（长度 ，12582912）取低3位</td>
+</tr>
+<tr>
+<td>2097152 &lt;= 长度 &lt;= 268435455</td>
+<td>4</td>
+<td>位或（长度 ，3758096384）</td>
+</tr>
+<tr>
+<td>长度 &gt;= 268435456</td>
+<td>5</td>
+<td>{240} + 到字节集(长度)</td>
+</tr>
+</tbody></table>
+<p>每个词的编码长度，然后紧接着许多字节的词内容（词长编码 + 词内容）；<br>字组合成句子，以零字符结束；<br>最高长度可以达到0x7FFFFFFFFF,最高占用4字节；<br>词长编码字节（Len）总是在最前面（网络顺序）；<br>如果单词的第一个字节是&gt; =0xF8，那么它是一个保留的控制字节。未知的控制字节API客户端接收后无法继续，因为它不知道如何解释以下字节；<br>目前，控制字节不使用；<br>句子一般情况是这样的：&lt;词长编码&gt;&lt;词的内容&gt;，主要有5种类型：命令语句，属性语句，API属性语句，查询语句，回复语句；</p>
+<h4 id="2-1-1-命令语句"><a href="#2-1-1-命令语句" class="headerlink" title="2.1.1 命令语句"></a>2.1.1 命令语句</h4><p>   在句子的第一个字是由名字（属性）和零长度的词终止字的命令。命令字的名称应以’/‘开始。命令中的名字，与命令行界面输入的一样，要注意的API中的命令不能有空格，需要用以’/‘替换，比如查看网卡信息 “/int print” 在API里就必须这样”/int/print”，不然无法识别；</p>
+<p>注意：发送的命令必须严格按照这样的顺序：</p>
+<pre class="line-numbers language-none"><code class="language-none">编码长度
+内容前缀"/"
+命令行的转换命令(空格用"/"替换)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>API特定的命令：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">getall 
+login 
+cancel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>命令连接例子：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">/login
+/ip/address/getall
+/user/active/listen
+/interface/vlan/remove
+/system/reboot<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-1-2-属性语句（Attribute-word）"><a href="#2-1-2-属性语句（Attribute-word）" class="headerlink" title="2.1.2 属性语句（Attribute word）"></a>2.1.2 属性语句（Attribute word）</h4><pre><code> 每个命令都有其自己的属性列表，命令内容决定属性。
+ 属性结构由5部分组成，顺序如下：
+</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">编码长度
+内容前缀( ! - = )
+属性名称
+    分离符号( ! - = )
+    属性值（可以被忽略，说明这个属性没有值）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p> <code>注意：为了编码方便，一个命令里的多个属性赋值可以在一句里完成        属性值可以为空</code><br>没有编码的长度前缀的例子：</p>
+<pre class="line-numbers language-none"><code class="language-none">=address=10.0.0.1        
+=name=iu=c3Eeg        
+=disable-running-check=yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>注意：属性词和API参数的顺序并不重要，不应依赖；</p>
+<h4 id="2-1-3-API属性语句"><a href="#2-1-3-API属性语句" class="headerlink" title="2.1.3 API属性语句"></a>2.1.3 API属性语句</h4><p>  API属性语句的结构必须严格按照下面的顺序：</p>
+<pre class="line-numbers language-none"><code class="language-none">编码长度
+内容与名称前缀"=."
+属性名称
+名称后缀符"="
+属性值<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>system/resource/print<br>=.proplist=uptime,cpu-load,uptime.oid,cpu-load.oid  </p>
+<p>目前只有这样的API属性的标签。</p>
+<p>注意：如果句子包含了属性语句标签，返回的每一个句子和从路由器标记句子将标记相同的标签，关于标签后面的章节有单独的介绍.</p>
+<h4 id="2-1-4-查询语句"><a href="#2-1-4-查询语句" class="headerlink" title="2.1.4 查询语句"></a>2.1.4 查询语句</h4><p>   查询语句支持对参数进行一定范围内的模糊查询，在下面的章节中有单独介绍；<br>   例如句子使用查询词的属性：</p>
+<pre class="line-numbers language-none"><code class="language-none">/interface/print
+?type=ether
+?type=vlan
+?#|!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>查询语句以符号”?”开始，目前查询语句只支持”print”命令；<br>警告：查询语句始终是在最前面；</p>
+<h4 id="2-1-5-回复语句"><a href="#2-1-5-回复语句" class="headerlink" title="2.1.5 回复语句"></a>2.1.5 回复语句</h4><p>   回复语句只能由路由器发送，它仅发送完整的句子，由客户端发送响应。</p>
+<p>回复语句的第一个字是以”!”开始的；<br>发送的每一句话产生至少一个答复（如果连接没有得到终止）；<br>每一句的最后答复是答复的第一个字<code>!done</code> ；<br>错误和异常情况以<code>!trap</code>开始；<br>开始数据回复以<code>!re</code>开始；<br>如果连接被关闭，RouterOS发送<code>!fatal</code>作为致命的原因进行答复并且关闭连接；</p>
+<h3 id="2-2-API语句"><a href="#2-2-API语句" class="headerlink" title="2.2 API语句"></a>2.2 API语句</h3><p>   API语句是使用API通信的主要对象</p>
+<p>空的句子被忽略；<br>句子是以字符”0”作为结束标志的；<br>客户端登陆后发送句子有数量和大小的限制；<br>属性语句没有顺序区别，比如.proplist属性语句的顺序和计数就是多变的；<br>句子结构如下：</p>
+<p>第一句话应该包含命令字；<br>应包含结束标志字符{0}；<br>可以包含0个或多个属性词，没有特定的顺序，不管什么属性词必须在句子里发送，属性词的顺序并不重要；<br>可以包含没有一个或几个查询词，查询词在句子的顺序是很重要的；</p>
+<p>注：零长度的词(字节’0’)终止了一句,如果没有提供,路由器将无法测试句字的有效性，只能把收到的句子当做句子的一部分；</p>
+<h2 id="3-初始登录"><a href="#3-初始登录" class="headerlink" title="3. 初始登录"></a>3. 初始登录</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">/login
+
+ !done
+=ret=ebddd18303a54111e2dea05a92ab46b4
+
+/login
+=name=admin
+=response=001ea726ed53ae38520c8334f82d44c9f2
+
+ !done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>注意：每个命令和响应结束都有一句空的语句；<br>首先，客户端发送”/login”命令<br>路由器的回复包含”=ret=需要的参数”<br>客户端发送第二个”/login”命令,接着是用户名(“=name=username”)和密码(“=response=response”)验证命令；<br>在错误的情况下，答复包含= RET =错误消息。<br>在成功登录客户端的情况下，就可以开始发出命令。</p>
+<h2 id="4-标签-tag"><a href="#4-标签-tag" class="headerlink" title="4. 标签(.tag)"></a>4. 标签(.tag)</h2><p>它是可以同时运行多个命令，而不必等待前一个完成。如果API的客户端是这样做的，需要区分命令的反应，它可以使用在命令句子’.tag’API的参数。<br>如果你有“.tag”命令句与非空值的参数，然后’.tag’参数完全相同的值将包含在该命令生成的所有答复。<br>如果不包括’.tag’参数，或它的值是空的，那么这个命令所有的反应将不会有“.tag”参数。</p>
+<h2 id="5-API命令说明"><a href="#5-API命令说明" class="headerlink" title="5. API命令说明"></a>5. API命令说明</h2><ul>
+<li><p>cancle（取消）<br>可选参数：=tag=tag ，取消所有正在运行的命令；<br>不能取消本身<br>所有取消的命令都是中断操作，并且在通常情况下会产生’!trap’ 和’!done’ 的回复;<br>请注意，”/cancel “是单独的命令，可以有它自己独特的’.tag’ 参数，它是不相关’=.tag’ 这个命令的参数；</p>
+</li>
+<li><p>listen (监听)<br>listen是在控制台print 命令可用的情况下使用，它没有预期中的效果（即可能无法正常工作）；<br>!re 数据回复句子会产生特定的项目列表中的一些变化；<br>当项目被删除或以其他任何方式清除，数据回复句子( ‘!re’）的属性值会包含’=.dead=yes’ ;<br>此命令不会终止。终止使用取消命令”/cancle”</p>
+</li>
+<li><p>getall （获取）<br>getall命令是在控制台print命令可用的情况下使用，自3.21版本以后的getall命令是print命令的别名。<br>回复包含= .id =项目内部编号属性</p>
+</li>
+<li><p>print  （显示）<br>API的print命令和控制台的print命令的不同主要有以下几个方面：<br>虽然参数不支持，但可以使用查询词（见下文）筛选项目。<br>传回的项目可能有额外的属性。<br>返回的属性的顺序是没有定义的。<br>如果列表中包含重复的条目，这些条目的处理没有被定义。<br>如果属性格式目前是在.proplist里，但项目里没有这个属性，该项目没有这个属性的值，（?名称将评估该项目为假）<br>如果没有设置.proplist参数，将打印所有的属性，甚至那些比较耗时的项目（如文件内容性能记数),因此推荐使用.proplist参数，设置=detail= argument，虽然可能会有遗漏，但是换回的却是高性能。<br>查询<br>print命令接受限制返回的句子设置的查询词。此功能是自RouterOS的3.21开始的。</p>
+</li>
+</ul>
+<h3 id="5-1-查询词说明"><a href="#5-1-查询词说明" class="headerlink" title="5.1 查询词说明"></a>5.1 查询词说明</h3><p>查询词以符号”?’开始。<br>查询词的顺序是在最前面的，从第一个字开始模糊查询。<br>对查询列表中每个项目进行评估，如果查询成功，项目被处理，如果查询失败，项目将被忽略。<br>查询评估在堆栈使用布尔逻辑值。最初，堆栈包含无限量的“真”值。在评估结束时，如果堆栈包含至少一个“假”值，查询失败。<br>查询词按照下列规定操作：</p>
+<table>
+<thead>
+<tr>
+<th>查询词</th>
+<th>描叙</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>?name</td>
+<td>如果项目属性名称的值不为空，堆栈压入真，否则压入假</td>
+</tr>
+<tr>
+<td>?-name</td>
+<td>如果项目属性名称的值为空，堆栈压入真，否则压入假</td>
+</tr>
+<tr>
+<td>?name=x 或 ?=name=x</td>
+<td>如果项目属性名称的值=x,堆栈压入真，否则压入假</td>
+</tr>
+<tr>
+<td>?&lt;name=x</td>
+<td>如果项目属性名称的值&lt;x ,堆栈压入真，否则压入假</td>
+</tr>
+<tr>
+<td>?&gt;name=x</td>
+<td>如果项目属性名称的值&gt;x ,堆栈压入真，否则压入假</td>
+</tr>
+</tbody></table>
+<p><code>?#</code> 操作符适用于操作在堆栈的值。<br>操作字符串是从左向右计算的。<br>任何其他的字符或单词的末尾的十进制数字序列被解释为一个堆栈指数。最高值指数0。<br>后跟一个字符的索引，压入该指数值的副本<br>指数是由单词的末尾替换所有值与该指数的值。<br>！操作符是反义字符，替换堆顶值为反义值；<br>&amp; 操作符是逻辑”与”操作符，从堆栈弹出2个值，进行逻辑与操作并将结果压于入堆栈<br>| 操作符是逻辑”或”操作符, 从堆栈弹出2个值，进行逻辑“或”操作并将结果压于入堆栈<br>. 索引后什么都不做<br>. 另一个字符后压入副本值到堆顶。</p>
+<p>例子:<br>取得所有的以太网和VLAN接口：</p>
+<pre class="line-numbers language-none"><code class="language-none">/interface/print
+?type=ether
+?type=vlan
+?#|<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>获取所有有备注的路由：</p>
+<pre class="line-numbers language-none"><code class="language-none">/ip/route/print
+?&gt;comment=<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>设置<br>set命令必须包含查询属性：”.id”, ,顺序并不重要，查询词可以是num,name或者Comment等可以区分对象的属性值，支持模糊查询，如果有多个对象的属性值包含查询词，只会修改找到的第一个对象，不会全部修改。</p>
+<p>一个修改PPP用户的例子：<br>增加一个用户名为nohacks，密码为test,备注为comment的PPPoE服务的用户账户。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"> /ppp/secret/add  
+=name=nohacks 
+=service=pppoe
+=password=test
+=Comment=comment
+!done
+=ret=*1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第一种方法：通过具有唯一性的num属性进行修改</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">   /ppp/secret/set
+=.id=*1
+=name=nohacks
+=password=test  
+    !done  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第二种方法：通过具有唯一性的name属性进行修改</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"> /ppp/secret/set
+=.id=nohacks
+=name=nohacks
+=password=test    
+!done   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>.id属性支持模糊查询，例如<br>=.id=nohac<br> 也可以成功修改nohacks账号<br>但要注意的是如果有多个对象包含查询词，比如还有一个账户anohac，这个命令只会修改序号靠前的账户。</p>
+<p>第三种方法：通过comment属性进行修改</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">    /ppp/secret/set
+=.id=comment
+=name=nohack
+=password=test    
+    !done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5-2-OID"><a href="#5-2-OID" class="headerlink" title="5.2 OID"></a>5.2 OID</h3><p>print命令可以返回属性是在SNMP OID值。此功能出现在3.23版本以后。<br>在控制台，OID值可以运行’print oid’命令看出。在API这些属性有”.OID”结束的名称，并可以加入他们的名字的值用”.proplist”检索。一个例子：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">/system/resource/print  
+=.proplist=uptime,cpu-load,uptime.oid,cpu-load.oid   
+
+ !re  
+=uptime=01:22:53  
+=cpu-load=0  
+=uptime.oid=.1.3.6.1.2.1.1.3.0  
+=cpu-load.oid=.1.3.6.1.2.1.25.3.3.1.2.1  
+ !done  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="6-API-命令例子"><a href="#6-API-命令例子" class="headerlink" title="6. API 命令例子"></a>6. API 命令例子</h2><h3 id="6-1-system-package-getall"><a href="#6-1-system-package-getall" class="headerlink" title="6.1 /system/package/getall"></a>6.1 /system/package/getall</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">/system/package/getall 
+/system/package/getall
+
+ !re
+=.id=*5802
+=disabled=no
+=name=routeros-x86
+=version=3.0beta2
+=build-time=oct/18/2006 16:24:41
+=scheduled=
+
+ !re
+=.id=*5805
+=disabled=no
+=name=system
+=version=3.0beta2
+=build-time=oct/18/2006 17:20:46
+=scheduled=<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>… 更多 !re 回复句子 …</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"> !re
+=.id=*5902
+=disabled=no
+=name=advanced-tools
+=version=3.0beta2
+=build-time=oct/18/2006 17:20:49
+=scheduled=
+
+ !done<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-2-user-active-listen"><a href="#6-2-user-active-listen" class="headerlink" title="6.2 /user/active/listen"></a>6.2 /user/active/listen</h3><pre class="line-numbers language-none"><code class="language-none">/user/active/listen 
+/user/active/listen
+
+ !re
+=.id=*68
+=radius=no
+=when=oct/24/2006 08:40:42
+=name=admin
+=address=0.0.0.0
+=via=console
+
+ !re
+=.id=*68
+=.dead=yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="6-3-cancel-simultaneous-commands"><a href="#6-3-cancel-simultaneous-commands" class="headerlink" title="6.3 /cancel, simultaneous commands"></a>6.3 /cancel, simultaneous commands</h3><pre class="line-numbers language-none"><code class="language-none">/login
+
+ !done
+=ret=856780b7411eefd3abadee2058c149a3
+
+/login
+=name=admin
+=response=005062f7a5ef124d34675bf3e81f56c556
+
+ !done
+
+-- first start listening for interface changes (tag is 2)
+/interface/listen
+.tag=2
+
+-- disable interface (tag is 3)
+/interface/set
+=disabled=yes
+=.id=ether1
+.tag=3
+
+-- this is done for disable command (tag 3)
+ !done
+.tag=3
+
+-- enable interface (tag is 4)
+/interface/set
+=disabled=no
+=.id=ether1
+.tag=4
+
+-- this update is generated by change made by first set command (tag 3)
+ !re
+=.id=*1
+=disabled=yes
+=dynamic=no
+=running=no
+=name=ether1
+=mtu=1500
+=type=ether
+.tag=2
+
+-- this is done for enable command (tag 4)
+ !done
+.tag=4
+
+-- get interface list (tag is 5)
+/interface/getall
+.tag=5
+
+-- this update is generated by change made by second set command (tag 4)
+ !re
+=.id=*1
+=disabled=no
+=dynamic=no
+=running=yes
+=name=ether1
+=mtu=1500
+=type=ether
+.tag=2
+
+-- these are replies to getall command (tag 5)
+ !re
+=.id=*1
+=disabled=no
+=dynamic=no
+=running=yes
+=name=ether1
+=mtu=1500
+=type=ether
+.tag=5
+
+ !re
+=.id=*2
+=disabled=no
+=dynamic=no
+=running=yes
+=name=ether2
+=mtu=1500
+=type=ether
+.tag=5
+
+-- here interface getall ends (tag 5)
+ !done
+.tag=5
+
+-- stop listening - request to cancel command with tag 2, cancel itself uses tag 7
+/cancel
+=tag=2
+.tag=7
+
+-- listen command is interrupted (tag 2)
+ !trap
+=category=2
+=message=interrupted
+.tag=2
+
+-- cancel command is finished (tag 7)
+ !done
+.tag=7
+
+-- listen command is finished (tag 2)
+ !done
+.tag=2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="7-客户端例子"><a href="#7-客户端例子" class="headerlink" title="7. 客户端例子"></a>7. 客户端例子</h2><p>this is simple API client in Python2<br>example for Python3<br>usage: api.py ip-address username password<br>after that type words from keyboard, terminating them with newline<br>Since empty word terminates sentence, you should press enter twice after last word before sentence will be sent to router. </p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python</span>
+<span class="token keyword">import</span> sys<span class="token punctuation">,</span> posix<span class="token punctuation">,</span> time<span class="token punctuation">,</span> md5<span class="token punctuation">,</span> binascii<span class="token punctuation">,</span> socket<span class="token punctuation">,</span> select
+<span class="token keyword">class</span> <span class="token class-name">ApiRos</span><span class="token punctuation">:</span>
+    <span class="token string">"Routeros api"</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> sk<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>sk <span class="token operator">=</span> sk
+        self<span class="token punctuation">.</span>currenttag <span class="token operator">=</span> <span class="token number">0</span>
+      
+    <span class="token keyword">def</span> <span class="token function">login</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> username<span class="token punctuation">,</span> pwd<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> repl<span class="token punctuation">,</span> attrs <span class="token keyword">in</span> self<span class="token punctuation">.</span>talk<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"/login"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            chal <span class="token operator">=</span> binascii<span class="token punctuation">.</span>unhexlify<span class="token punctuation">(</span>attrs<span class="token punctuation">[</span><span class="token string">'=ret'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        md <span class="token operator">=</span> md5<span class="token punctuation">.</span>new<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        md<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token string">'\x00'</span><span class="token punctuation">)</span>
+        md<span class="token punctuation">.</span>update<span class="token punctuation">(</span>pwd<span class="token punctuation">)</span>
+        md<span class="token punctuation">.</span>update<span class="token punctuation">(</span>chal<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>talk<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"/login"</span><span class="token punctuation">,</span> <span class="token string">"=name="</span> <span class="token operator">+</span> username<span class="token punctuation">,</span>
+                   <span class="token string">"=response=00"</span> <span class="token operator">+</span> binascii<span class="token punctuation">.</span>hexlify<span class="token punctuation">(</span>md<span class="token punctuation">.</span>digest<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">talk</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> words<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>writeSentence<span class="token punctuation">(</span>words<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span> <span class="token keyword">return</span>
+        r <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            i <span class="token operator">=</span> self<span class="token punctuation">.</span>readSentence<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span> <span class="token keyword">continue</span>
+            reply <span class="token operator">=</span> i<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+            attrs <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+            <span class="token keyword">for</span> w <span class="token keyword">in</span> i<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                j <span class="token operator">=</span> w<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'='</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    attrs<span class="token punctuation">[</span>w<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">''</span>
+               <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    attrs<span class="token punctuation">[</span>w<span class="token punctuation">[</span><span class="token punctuation">:</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> w<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+            r<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>reply<span class="token punctuation">,</span> attrs<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> reply <span class="token operator">==</span> <span class="token string">'!done'</span><span class="token punctuation">:</span> <span class="token keyword">return</span> r
+
+    <span class="token keyword">def</span> <span class="token function">writeSentence</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> words<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        ret <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> w <span class="token keyword">in</span> words<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>writeWord<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
+            ret <span class="token operator">+=</span> <span class="token number">1</span>
+        self<span class="token punctuation">.</span>writeWord<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> ret
+
+    <span class="token keyword">def</span> <span class="token function">readSentence</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        r <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            w <span class="token operator">=</span> self<span class="token punctuation">.</span>readWord<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> w <span class="token operator">==</span> <span class="token string">''</span><span class="token punctuation">:</span> <span class="token keyword">return</span> r
+            r<span class="token punctuation">.</span>append<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
+            
+    <span class="token keyword">def</span> <span class="token function">writeWord</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> w<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">"&lt;&lt;&lt; "</span> <span class="token operator">+</span> w
+        self<span class="token punctuation">.</span>writeLen<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">readWord</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        ret <span class="token operator">=</span> self<span class="token punctuation">.</span>readStr<span class="token punctuation">(</span>self<span class="token punctuation">.</span>readLen<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span> <span class="token string">"&gt;&gt;&gt; "</span> <span class="token operator">+</span> ret
+        <span class="token keyword">return</span> ret
+
+    <span class="token keyword">def</span> <span class="token function">writeLen</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> l<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> l <span class="token operator">&lt;</span> <span class="token number">0x80</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">elif</span> l <span class="token operator">&lt;</span> <span class="token number">0x4000</span><span class="token punctuation">:</span>
+            l <span class="token operator">|</span><span class="token operator">=</span> <span class="token number">0x8000</span>
+            self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token punctuation">(</span>l <span class="token operator">&gt;&gt;</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span>l <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">elif</span> l <span class="token operator">&lt;</span> <span class="token number">0x200000</span><span class="token punctuation">:</span>
+            l <span class="token operator">|</span><span class="token operator">=</span> <span class="token number">0xC00000</span>
+            self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token punctuation">(</span>l <span class="token operator">&gt;&gt;</span> <span class="token number">16</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token punctuation">(</span>l <span class="token operator">&gt;&gt;</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span>l <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">elif</span> l <span class="token operator">&lt;</span> <span class="token number">0x10000000</span><span class="token punctuation">:</span>        
+            l <span class="token operator">|</span><span class="token operator">=</span> <span class="token number">0xE0000000</span>         
+            self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token punctuation">(</span>l <span class="token operator">&gt;&gt;</span> <span class="token number">24</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token punctuation">(</span>l <span class="token operator">&gt;&gt;</span> <span class="token number">16</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token punctuation">(</span>l <span class="token operator">&gt;&gt;</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span>l <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>                       
+            self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token number">0xF0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token punctuation">(</span>l <span class="token operator">&gt;&gt;</span> <span class="token number">24</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token punctuation">(</span>l <span class="token operator">&gt;&gt;</span> <span class="token number">16</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token punctuation">(</span>l <span class="token operator">&gt;&gt;</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>writeStr<span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span>l <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">readLen</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>              
+        c <span class="token operator">=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>readStr<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">&amp;</span> <span class="token number">0x80</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0x00</span><span class="token punctuation">:</span>      
+            <span class="token keyword">pass</span>                    
+        <span class="token keyword">elif</span> <span class="token punctuation">(</span>c <span class="token operator">&amp;</span> <span class="token number">0xC0</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0x80</span><span class="token punctuation">:</span>    
+            c <span class="token operator">&amp;</span><span class="token operator">=</span> <span class="token operator">~</span><span class="token number">0xC0</span>              
+            c <span class="token operator">&lt;&lt;</span><span class="token operator">=</span> <span class="token number">8</span>                 
+            c <span class="token operator">+=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>readStr<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
+        <span class="token keyword">elif</span> <span class="token punctuation">(</span>c <span class="token operator">&amp;</span> <span class="token number">0xE0</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0xC0</span><span class="token punctuation">:</span>    
+            c <span class="token operator">&amp;</span><span class="token operator">=</span> <span class="token operator">~</span><span class="token number">0xE0</span>              
+            c <span class="token operator">&lt;&lt;</span><span class="token operator">=</span> <span class="token number">8</span>                 
+            c <span class="token operator">+=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>readStr<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
+            c <span class="token operator">&lt;&lt;</span><span class="token operator">=</span> <span class="token number">8</span>                 
+            c <span class="token operator">+=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>readStr<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
+        <span class="token keyword">elif</span> <span class="token punctuation">(</span>c <span class="token operator">&amp;</span> <span class="token number">0xF0</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0xE0</span><span class="token punctuation">:</span>    
+            c <span class="token operator">&amp;</span><span class="token operator">=</span> <span class="token operator">~</span><span class="token number">0xF0</span>              
+            c <span class="token operator">&lt;&lt;</span><span class="token operator">=</span> <span class="token number">8</span>                 
+            c <span class="token operator">+=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>readStr<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
+            c <span class="token operator">&lt;&lt;</span><span class="token operator">=</span> <span class="token number">8</span>                 
+            c <span class="token operator">+=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>readStr<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
+            c <span class="token operator">&lt;&lt;</span><span class="token operator">=</span> <span class="token number">8</span>                 
+            c <span class="token operator">+=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>readStr<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
+        <span class="token keyword">elif</span> <span class="token punctuation">(</span>c <span class="token operator">&amp;</span> <span class="token number">0xF8</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0xF0</span><span class="token punctuation">:</span>    
+            c <span class="token operator">=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>readStr<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     
+            c <span class="token operator">&lt;&lt;</span><span class="token operator">=</span> <span class="token number">8</span>                 
+            c <span class="token operator">+=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>readStr<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
+            c <span class="token operator">&lt;&lt;</span><span class="token operator">=</span> <span class="token number">8</span>                 
+            c <span class="token operator">+=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>readStr<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
+            c <span class="token operator">&lt;&lt;</span><span class="token operator">=</span> <span class="token number">8</span>                 
+            c <span class="token operator">+=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>readStr<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
+        <span class="token keyword">return</span> c                    
+
+    <span class="token keyword">def</span> <span class="token function">writeStr</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>        
+        n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>                      
+        <span class="token keyword">while</span> n <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>         
+            r <span class="token operator">=</span> self<span class="token punctuation">.</span>sk<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">[</span>n<span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> r <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span> <span class="token keyword">raise</span> RuntimeError<span class="token punctuation">,</span> <span class="token string">"connection closed by remote end"</span>
+            n <span class="token operator">+=</span> r                  
+
+    <span class="token keyword">def</span> <span class="token function">readStr</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> length<span class="token punctuation">)</span><span class="token punctuation">:</span>      
+        ret <span class="token operator">=</span> <span class="token string">''</span>                    
+        <span class="token keyword">while</span> <span class="token builtin">len</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span> <span class="token operator">&lt;</span> length<span class="token punctuation">:</span>    
+            s <span class="token operator">=</span> self<span class="token punctuation">.</span>sk<span class="token punctuation">.</span>recv<span class="token punctuation">(</span>length <span class="token operator">-</span> <span class="token builtin">len</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> s <span class="token operator">==</span> <span class="token string">''</span><span class="token punctuation">:</span> <span class="token keyword">raise</span> RuntimeError<span class="token punctuation">,</span> <span class="token string">"connection closed by remote end"</span>
+            ret <span class="token operator">+=</span> s
+        <span class="token keyword">return</span> ret
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    s <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_STREAM<span class="token punctuation">)</span>
+    s<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">8728</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
+    apiros <span class="token operator">=</span> ApiRos<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>             
+    apiros<span class="token punctuation">.</span>login<span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    inputsentence <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        r <span class="token operator">=</span> select<span class="token punctuation">.</span>select<span class="token punctuation">(</span><span class="token punctuation">[</span>s<span class="token punctuation">,</span> sys<span class="token punctuation">.</span>stdin<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> s <span class="token keyword">in</span> r<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token comment"># something to read in socket, read sentence</span>
+            x <span class="token operator">=</span> apiros<span class="token punctuation">.</span>readSentence<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span> sys<span class="token punctuation">.</span>stdin <span class="token keyword">in</span> r<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token comment"># read line from input and strip off newline</span>
+            l <span class="token operator">=</span> sys<span class="token punctuation">.</span>stdin<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            l <span class="token operator">=</span> l<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+            <span class="token comment"># if empty line, send sentence and start with new</span>
+            <span class="token comment"># otherwise append to input sentence</span>
+            <span class="token keyword">if</span> l <span class="token operator">==</span> <span class="token string">''</span><span class="token punctuation">:</span>
+                apiros<span class="token punctuation">.</span>writeSentence<span class="token punctuation">(</span>inputsentence<span class="token punctuation">)</span>
+                inputsentence <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                inputsentence<span class="token punctuation">.</span>append<span class="token punctuation">(</span>l<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="例子运行实例"><a href="#例子运行实例" class="headerlink" title="例子运行实例"></a>例子运行实例</h6><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">debian@localhost:~/api-test$ ./api.py 10.0.0.1 admin 
+&lt;&lt;&lt; /login
+&lt;&lt;&lt;
+&gt;&gt;&gt; !done
+&gt;&gt;&gt; =ret=93b438ec9b80057c06dd9fe67d56aa9a
+&gt;&gt;&gt; 
+&lt;&lt;&lt; /login
+&lt;&lt;&lt; =name=admin
+&lt;&lt;&lt; =response=00e134102a9d330dd7b1849fedfea3cb57
+&lt;&lt;&lt; 
+&gt;&gt;&gt; !done
+&gt;&gt;&gt; 
+
+/user/getall
+&lt;&lt;&lt; /user/getall
+&lt;&lt;&lt; 
+&gt;&gt;&gt; !re
+&gt;&gt;&gt; =.id=*1
+&gt;&gt;&gt; =disabled=no
+&gt;&gt;&gt; =name=admin
+&gt;&gt;&gt; =group=full
+&gt;&gt;&gt; =address=0.0.0.0/0
+&gt;&gt;&gt; =netmask=0.0.0.0
+&gt;&gt;&gt; 
+&gt;&gt;&gt; !done
+&gt;&gt;&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="8-参考资料"><a href="#8-参考资料" class="headerlink" title="8.参考资料"></a>8.参考资料</h2><p>HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/API_command_notes&quot;API">http://wiki.mikrotik.com/wiki/API_command_notes"API</a> command notes</p>
+<h3 id="8-1-API-examples-in-the-Wiki"><a href="#8-1-API-examples-in-the-Wiki" class="headerlink" title="8.1 API examples in the Wiki"></a>8.1 API examples in the Wiki</h3><p>HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/API_PHP_class&quot;in">http://wiki.mikrotik.com/wiki/API_PHP_class"in</a> PHP#1<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/API_PHP_package&quot;in">http://wiki.mikrotik.com/wiki/API_PHP_package"in</a> PHP using PEAR2#2<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/API_Delphi&quot;in">http://wiki.mikrotik.com/wiki/API_Delphi"in</a> Delphi#1<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/API_Delphi_Client&quot;in">http://wiki.mikrotik.com/wiki/API_Delphi_Client"in</a> Delphi#2<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/API_in_C&quot;in">http://wiki.mikrotik.com/wiki/API_in_C"in</a> C<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/API_in_C_using_winsock&quot;in">http://wiki.mikrotik.com/wiki/API_in_C_using_winsock"in</a> C using winsock<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/API_In_CPP&quot;API">http://wiki.mikrotik.com/wiki/API_In_CPP"API</a> in C++<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/API_in_C_Sharp&quot;in">http://wiki.mikrotik.com/wiki/API_in_C_Sharp"in</a> C#<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/API_ActionScript_3_class&quot;in">http://wiki.mikrotik.com/wiki/API_ActionScript_3_class"in</a> Flash Actionscript 3<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/API_Ruby_class&quot;in">http://wiki.mikrotik.com/wiki/API_Ruby_class"in</a> Ruby on rails<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/API_in_VB_dot_NET&quot;in">http://wiki.mikrotik.com/wiki/API_in_VB_dot_NET"in</a> VB .NET<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/API_in_Java&quot;in">http://wiki.mikrotik.com/wiki/API_in_Java"in</a> java<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/MikroNode&quot;in">http://wiki.mikrotik.com/wiki/MikroNode"in</a> NodeJS<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/Manual%3AAPI_Python3&quot;Python3">http://wiki.mikrotik.com/wiki/Manual%3AAPI_Python3"Python3</a></p>
+<h3 id="8-2-API-examples-on-the-MikroTik-Forum"><a href="#8-2-API-examples-on-the-MikroTik-Forum" class="headerlink" title="8.2 API examples on the MikroTik Forum"></a>8.2 API examples on the MikroTik Forum</h3><p>HYPERLINK “<a target="_blank" rel="noopener" href="http://forum.mikrotik.com/viewtopic.php?f=9&amp;t=22744&quot;in">http://forum.mikrotik.com/viewtopic.php?f=9&amp;t=22744"in</a> Perlby Hugh<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://forum.mikrotik.com/viewtopic.php?f=9&amp;t=28821&quot;in">http://forum.mikrotik.com/viewtopic.php?f=9&amp;t=28821"in</a> Delphiby Rodolfo<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://forum.mikrotik.com/viewtopic.php?f=9&amp;t=31555&quot;in">http://forum.mikrotik.com/viewtopic.php?f=9&amp;t=31555"in</a> Delphi #2by Chupaka<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://forum.mikrotik.com/viewtopic.php?f=9&amp;t=51861&quot;in">http://forum.mikrotik.com/viewtopic.php?f=9&amp;t=51861"in</a> NodeJSby Trakkasure<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://forum.mikrotik.com/viewtopic.php?f=2&amp;t=51584&quot;in">http://forum.mikrotik.com/viewtopic.php?f=2&amp;t=51584"in</a> VBby lucho512<br>HYPERLINK “<a target="_blank" rel="noopener" href="http://forum.mikrotik.com/viewtopic.php?f=9&amp;t=56869&quot;on">http://forum.mikrotik.com/viewtopic.php?f=9&amp;t=56869"on</a> PHP for sparks frameworkby vthinkteam</p>
+<h3 id="8-3-API-exmaples-elsewhere"><a href="#8-3-API-exmaples-elsewhere" class="headerlink" title="8.3 API exmaples elsewhere"></a>8.3 API exmaples elsewhere</h3><p>HYPERLINK “<a target="_blank" rel="noopener" href="http://code.google.com/p/mikrotik4net/&quot;in">http://code.google.com/p/mikrotik4net/"in</a> .NET (C#) high-level api solutionby danikf<br>HYPERLINK “<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/netrouteros/&quot;in">https://sourceforge.net/projects/netrouteros/"in</a> PHPby boen_robot<br>Retrieved from “HYPERLINK “<a target="_blank" rel="noopener" href="http://wiki.mikrotik.com/wiki/Manual:API&quot;http://wiki.mikrotik.com/wiki/Manual:API&quot;">http://wiki.mikrotik.com/wiki/Manual:API"http://wiki.mikrotik.com/wiki/Manual:API"</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">nohacks</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.nohacks.cn/2016/03/08/ros-api-zhong-wen-shuo-ming.html">http://www.nohacks.cn/2016/03/08/ros-api-zhong-wen-shuo-ming.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">nohacks</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/ROS-API/">
+                                    <span class="chip bg-color">ROS API</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling"
+         style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script>
+    $.getScript("/libs/valine/av-min.js", function () {
+        $.getScript("/libs/valine/Valine.min.js", function () {
+            new Valine({
+                el: '#vcomments',
+                appId: '7dQviJOrcNyIB3J5eU9shnbK-gzGzoHsz',
+                appKey: '3Dsn63vl7YNP2eJw6Wq5HkKw',
+                notify: 'false' === 'true',
+                verify: 'false' === 'true',
+                visitor: 'true' === 'true',
+                avatar: 'mm',
+                pageSize: '10',
+                lang: 'zh-cn',
+                placeholder: '发表回复'
+            });
+
+        })
+    })
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2016/04/19/win7-feng-zhuang-bu-zou.html">
+                    <div class="card-image">
+                        
+                        <img src="https://s4.ax1x.com/2022/01/16/7tilQg.png" class="responsive-img" alt="Win7封装步骤">
+                        
+                        <span class="card-title">Win7封装步骤</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2016-04-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%88%86%E4%BA%AB/" class="post-category">
+                                    分享
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/">
+                        <span class="chip bg-color">系统封装</span>
+                    </a>
+                    
+                    <a href="/tags/Win7%E5%B0%81%E8%A3%85/">
+                        <span class="chip bg-color">Win7封装</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2007/07/18/hui-bian-ring-3-xia-shi-xian-hook-api.html">
+                    <div class="card-image">
+                        
+                        <img src="https://s4.ax1x.com/2022/01/13/7MmiFS.jpg" class="responsive-img" alt="汇编Ring 3下实现 HOOK API">
+                        
+                        <span class="card-title">汇编Ring 3下实现 HOOK API</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2007-07-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%88%86%E4%BA%AB/" class="post-category">
+                                    分享
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hook-api/">
+                        <span class="chip bg-color">hook api</span>
+                    </a>
+                    
+                    <a href="/tags/asm/">
+                        <span class="chip bg-color">asm</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src=""></script>
+<script>
+    $.getScript("/libs/tocbot/tocbot.min.js",function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('3'),
+            headingSelector: 'h2, h3, h4,h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4,h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    })
+</script>
+
+    
+
+</main>
+
+
+
+</main>
+
+<footer class="page-footer bg-color">
+    
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <a href="/about" target="_blank">nohacks</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">12.2k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "1";
+                        var startDate = "1";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+                <span id="icp"><img src="/medias/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备14029867号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xymov" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:nohacks@vip.qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=23453161" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 23453161" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+<!-- 深色模式按钮 -->
+<a onclick="switchNightMode()" id="sma" title="模式切换">
+    <i class="fa fa-moon" id="nightMode" aria-hidden="true"></i>
+</a>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+<script type="text/javascript">
+    $.getScript("https://files.islu.cn/static/pjax/pjax.min.js",loadPjax)
+    function loadPjax(){
+        var pjax = new Pjax({
+            selectors: [
+                "head title",
+                'head meta[name="keywords"]',
+                'head meta[name="description"]',
+                "main#main_wrap",
+                "#rightside"
+            ],
+            cache: true,
+            cacheBust: false
+        });
+    }
+
+    // 开始 PJAX 执行的函数
+    document.addEventListener('pjax:send', function () {
+    });
+    // PJAX 完成之后执行的函数，可以和上面的重载放在一起
+    document.addEventListener('pjax:complete', function () {
+        document.querySelectorAll('script[data-pjax]').forEach(item => {
+            const newScript = document.createElement('script')
+            const content = item.text || item.textContent || item.innerHTML || ""
+            Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+            newScript.appendChild(document.createTextNode(content))
+            item.parentNode.replaceChild(newScript, item)
+        })
+    });
+
+    // Pjax请求错误时，跳转到404页面
+    document.addEventListener('pjax:error', (err) => {
+        if (err.request.status === 404) {
+            pjax.loadUrl('/404.html')
+        }
+    })
+</script>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+
+
+
+
+<!-- 雪花特效 -->
+
+
+<!-- 鼠标星星特效 -->
+
+
+
+    <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+    <script src="/libs/others/TencentCaptcha.js"></script>
+    <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button"
+            hidden></button>
+
+
+<!-- Baidu Analytics -->
+
+<!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+
+    <script src="/libs/others/clicklove.js" async="async"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+<!--腾讯兔小巢-->
+
+
+
+
+
+
+
+
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+
+
+</body>
+
+</html>
