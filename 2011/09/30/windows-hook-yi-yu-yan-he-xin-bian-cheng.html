@@ -29,9 +29,9 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <link rel="stylesheet" type="text/css" href="/css/dark.css">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
-<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="nohacks" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.0.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="nohacks" type="application/atom+xml">
 </head>
 
 
@@ -541,7 +541,7 @@ WPARAM wParam<span class="token punctuation">,</span>
 LPARAM lParam
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>当然上面是在C中的表达方式,意思是说这个直定义的钩子子程必须有3个参数,在易中应象这样表达:</p>
+<p>当然上面是在C语言中的声明,意思是说这个自定义的钩子子程必须有3个参数,在易语言中则是这样声明:</p>
 <pre class="line-numbers language-none"><code class="language-none">.子程序 HookProc, 整数型, 公开, 钩子回调函数
 .参数 ncode, 整数型
 .参数 wParam, 整数型
